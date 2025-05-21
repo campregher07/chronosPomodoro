@@ -10,26 +10,9 @@ import { Cylces } from './components/Cycles';
 import { DefaultButton } from './components/DeafualtButton';
 import { PlayCircleIcon } from 'lucide-react';
 import { Footer } from './components/Footer';
-import { Heading } from './components/Heading';
-import { useState } from 'react';
-
 export function App() {
-  const [num, setNum] = useState(0); // com o useState não pode ser usado atribuição diretamente
-  // const [num, setNum] = useState(() => {
-  //   return 0;
-  // }); // Usa essa Lazy inicialization qnd é necessario muitos calculos
-
-  function handleClick() {
-    setNum(prevState => prevState + 1); // regrinha de q qnd depende da variavel anterior, use essa func
-  }
-
   return (
     <>
-      <Heading>
-        <span id='numero'>Número: {num}</span>
-      </Heading>
-      <button onClick={handleClick}>Aumenta</button>
-
       <Container>
         <Logo />
       </Container>
@@ -48,7 +31,7 @@ export function App() {
             <DefaultInput
               id='meuInput'
               type='text'
-              labelTest={num.toString()}
+              labelTest='task'
               placeholder='Digite Algo'
             />
           </div>
